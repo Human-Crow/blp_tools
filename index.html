@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blueprint Tools</title>
+    <link rel="stylesheet" href="styles.css?v=2.0.0" type="text/css">
+</head>
+<body>
+    <main>
+        <h1>Blueprint Tools</h1>
+
+        <nav class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="mirror" aria-selected="true">Mirror</button>
+            <button class="tab" role="tab" data-tab="image" aria-selected="false">Image</button>
+        </nav>
+
+        <!-- Mirror -->
+        <section id="tab-mirror" class="panel" role="tabpanel">
+            <p class="lead">Mirror a blueprint left to right.</p>
+            <p class="warning">
+                Some buildings may become incorrectly connected or disconnected:
+                Machine Shop, Forge, Manufacturer, Coal Power Plant.
+            </p>
+
+            <form id="mirror-form" class="field">
+                <label for="blp_id">Blueprint id or url</label>
+                <div class="row">
+                    <input id="blp_id" autocomplete="off" spellcheck="false" placeholder="e.g. w7tx25">
+                    <button type="submit" id="mirror">Mirror</button>
+                </div>
+            </form>
+
+            <p class="status" role="status" aria-live="polite"></p>
+            <div class="result" hidden>
+                <label>New blueprint id</label>
+                <div class="row">
+                    <code class="new-id"></code>
+                    <button class="copy small" type="button">Copy link</button>
+                </div>
+                <a class="link" target="_blank" rel="noopener"></a>
+            </div>
+        </section>
+
+        <!-- Image -->
+        <section id="tab-image" class="panel" role="tabpanel" hidden>
+            <p class="lead">Turn an image into a blueprint: one building per pixel.</p>
+            <p class="warning">
+                Max size for sharing: ~200,000 buildings<br>
+                Max size for opening: 999,999 buildings
+            </p>
+
+            <label for="imgInput" class="drop" id="drop">
+                <input type="file" accept="image/*" id="imgInput" hidden>
+                <img id="imagePreview" alt="" hidden>
+                <span id="fileNameDisplay">Choose an image or drop it here</span>
+                <span id="imageInfo" class="muted"></span>
+            </label>
+
+            <button id="convert" disabled>Convert</button>
+
+            <p class="status" role="status" aria-live="polite"></p>
+            <div class="result" hidden>
+                <label>New blueprint id</label>
+                <div class="row">
+                    <code class="new-id"></code>
+                    <button class="copy small" type="button">Copy link</button>
+                </div>
+                <a class="link" target="_blank" rel="noopener"></a>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="./script.js?v=2.0.0"></script>
+</body>
+</html>
