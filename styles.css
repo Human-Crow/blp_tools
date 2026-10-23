@@ -38,6 +38,19 @@ h1 {
     margin: 0 0 16px;
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-logo {
+    width: 1.2em;            /* scales with the title text */
+    height: 1.2em;
+    flex: none;
+    border-radius: 18%;
+}
+
 p {
     margin: 0 0 12px;
 }
@@ -88,6 +101,7 @@ code {
 
 .tab {
     width: auto;
+    min-width: 0;
     height: auto;
     padding: 8px 20px;
     margin: 0 0 -1px;
@@ -167,6 +181,166 @@ button:focus-visible,
 
 .field {
     margin-bottom: 8px;
+}
+
+
+input.wide {
+    width: 100%;
+}
+
+button.secondary {
+    background: var(--field);
+}
+
+button.secondary:hover:not(:disabled) {
+    background: #555;
+}
+
+
+/* tier list */
+
+.presets {
+    margin: 16px 0 12px;
+}
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.tier-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.tier-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.tier-row.keep .tier-icon {
+    opacity: 0.35;
+}
+
+.tier-row.keep .tier-name {
+    color: var(--muted);
+}
+
+.tier-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tier-name {
+    font-size: 17px;
+}
+
+.tier-recipe {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+}
+
+.tier-recipe:empty {
+    display: none;
+}
+
+.item-icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+}
+
+.tier-meta {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.badge {
+    padding: 0 6px;
+    border-radius: 6px;
+    background: var(--warn);
+    color: #1e1e1e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* the building's current tier */
+.segments label.current {
+    box-shadow: inset 0 -3px 0 var(--muted);
+}
+
+.segments {
+    display: flex;
+}
+
+.segments input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.segments label {
+    margin: 0;
+    min-width: 38px;
+    height: 36px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: var(--field);
+    border: 1px solid var(--border);
+    margin-left: -1px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.segments label:first-of-type {
+    border-radius: 8px 0 0 8px;
+    margin-left: 0;
+}
+
+.segments label:last-of-type {
+    border-radius: 0 8px 8px 0;
+}
+
+.segments label:hover {
+    background: #555;
+}
+
+.segments input:checked + label {
+    background: var(--accent);
+    border-color: var(--accent-hover);
+    position: relative;
+}
+
+.segments input:focus-visible + label {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 1px;
+    position: relative;
+}
+
+@media (max-width: 480px) {
+    .tier-row {
+        grid-template-columns: 48px 1fr;
+    }
+    .segments {
+        grid-column: 1 / -1;
+    }
+    .segments label {
+        flex: 1;
+    }
 }
 
 

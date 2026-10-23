@@ -4,14 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blueprint Tools</title>
-    <link rel="stylesheet" href="styles.css?v=2.0.0" type="text/css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=8" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=8" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=8" sizes="16x16 24x24 32x32 48x48 64x64 96x96 128x128" />
+    <link rel="stylesheet" href="styles.css?v=2.3.0" type="text/css">
 </head>
 <body>
     <main>
-        <h1>Blueprint Tools</h1>
+        <h1 class="title">
+            Blueprint Tools
+            <img class="title-logo" src="favicon-192.png?v=8" alt="">
+        </h1>
 
         <nav class="tabs" role="tablist">
             <button class="tab" role="tab" data-tab="mirror" aria-selected="true">Mirror</button>
+            <button class="tab" role="tab" data-tab="tier" aria-selected="false">Tier</button>
             <button class="tab" role="tab" data-tab="image" aria-selected="false">Image</button>
         </nav>
 
@@ -29,6 +38,44 @@
                     <input id="blp_id" autocomplete="off" spellcheck="false" placeholder="e.g. w7tx25">
                     <button type="submit" id="mirror">Mirror</button>
                 </div>
+            </form>
+
+            <p class="status" role="status" aria-live="polite"></p>
+            <div class="result" hidden>
+                <label>New blueprint id</label>
+                <div class="row">
+                    <code class="new-id"></code>
+                    <button class="copy small" type="button">Copy link</button>
+                </div>
+                <a class="link" target="_blank" rel="noopener"></a>
+            </div>
+        </section>
+
+        <!-- Tier -->
+        <section id="tab-tier" class="panel" role="tabpanel" hidden>
+            <p class="lead">Change the tier of buildings in a blueprint.</p>
+
+            <form id="tier-load-form" class="field">
+                <label for="tier_blp_id">Blueprint id or url</label>
+                <div class="row">
+                    <input id="tier_blp_id" autocomplete="off" spellcheck="false" placeholder="e.g. w7tx25">
+                    <button type="submit" id="tier-load">Load</button>
+                </div>
+            </form>
+
+            <form id="tier-form" hidden>
+                <p id="tier-info" class="muted"></p>
+
+                <div class="row presets">
+                    <button type="button" class="small" data-preset="1">All tier 1</button>
+                    <button type="button" class="small" data-preset="max">All max</button>
+                    <button type="button" class="small secondary" data-preset="keep">Keep all</button>
+                </div>
+
+                <!-- one row per building + current tier + recipe/filter, filled in by script.js -->
+                <div id="tier-list" class="tier-list"></div>
+
+                <button type="submit" id="tier" disabled>Change tiers</button>
             </form>
 
             <p class="status" role="status" aria-live="polite"></p>
@@ -72,6 +119,6 @@
 
     </main>
 
-    <script type="module" src="./script.js?v=2.0.0"></script>
+    <script type="module" src="./script.js?v=2.3.0"></script>
 </body>
 </html>
