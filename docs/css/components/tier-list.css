@@ -1,0 +1,89 @@
+/* tier list: one row per building + tier + recipe/filter */
+
+.presets {
+    margin: 16px 0 12px;
+}
+
+.tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.tier-row {
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: center;
+    gap: 6px 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.tier-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.tier-row.keep .tier-icon {
+    opacity: 0.35;
+}
+
+.tier-row.keep .tier-name {
+    color: var(--muted);
+}
+
+.tier-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.tier-name {
+    font-size: 24px;
+}
+
+.tier-recipe {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 20px;
+}
+
+.tier-recipe:empty {
+    display: none;
+}
+
+.item-icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+}
+
+.tier-meta {
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.badge {
+    padding: 0 6px;
+    border-radius: 6px;
+    background: var(--warn);
+    color: #1e1e1e;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* phones: the tier buttons go under the name */
+@media (max-width: 620px) {
+    .tier-row {
+        grid-template-columns: 48px 1fr;
+    }
+    .segments {
+        grid-column: 1 / -1;
+    }
+    .segments label {
+        flex: 1;
+    }
+}

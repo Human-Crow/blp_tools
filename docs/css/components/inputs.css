@@ -1,0 +1,18 @@
+/* text inputs */
+
+input {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 4px 10px;
+    background: var(--field);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 20px;
+}
+
+input.wide {
+    width: 100%;
+}

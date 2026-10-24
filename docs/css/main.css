@@ -1,0 +1,10 @@
+@import "base/variables.css?v=1";
+@import "base/reset.css?v=1";
+@import "base/utilities.css?v=1";
+@import "components/buttons.css?v=1";
+@import "components/inputs.css?v=1";
+@import "components/tabs.css?v=1";
+@import "components/tier-list.css?v=1";
+@import "components/segments.css?v=1";
+@import "components/drop.css?v=1";
+@import "components/result.css?v=1";

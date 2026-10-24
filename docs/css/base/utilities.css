@@ -1,0 +1,52 @@
+/* small shared styles */
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-logo {
+    width: 1.2em;            /* scales with the title text */
+    height: 1.2em;
+    flex: none;
+    border-radius: 18%;
+}
+
+.lead {
+    color: var(--text);
+}
+
+.warning {
+    color: var(--warning);
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.muted.warn { color: var(--warn); }
+
+.muted.error { color: var(--warning); }
+
+.row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.field {
+    margin-bottom: 8px;
+}
+
+/* keyboard focus, for inputs, buttons and the image drop area */
+input:focus-visible,
+button:focus-visible,
+.drop:focus-within {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 2px;
+}

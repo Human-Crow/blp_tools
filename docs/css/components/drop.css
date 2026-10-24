@@ -1,0 +1,30 @@
+/* image drop area */
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+.drop:hover,
+.drop.over {
+    border-color: var(--accent-hover);
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 250px;
+    min-height: 96px;     /* small pixel art is scaled up (stays sharp) */
+    image-rendering: pixelated;
+}

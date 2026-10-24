@@ -1,0 +1,21 @@
+/* status line and new blueprint box */
+
+.status {
+    min-height: 1.4em;
+    margin: 16px 0;
+}
+
+.status.loading { color: var(--muted); }
+
+.status.error { color: var(--warning); }
+
+.result {
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.result .row {
+    justify-content: space-between;
+    margin-bottom: 8px;
+}

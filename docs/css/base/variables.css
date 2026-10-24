@@ -1,0 +1,16 @@
+/* colours */
+
+:root {
+    --bg: #1e1e1e;
+    --surface: #2a2a2a;
+    --field: #444;
+    --border: #666;
+    --text: #ffffff;
+    --muted: #b5b5b5;
+    --accent: #007fb1;
+    --accent-hover: #009edd;
+    --link: #2196f3;
+    --warning: rgb(255, 110, 110);
+    --warn: #e6b450;
+    color-scheme: dark;
+}
